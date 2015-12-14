@@ -37,4 +37,4 @@ class Web(MySQLModel):
 
 db.connect()
 if __name__ == '__main__':
-	db.create_tables([User, Festival, Webpageregister], safe=True)
+	db.create_tables([User, Web], safe=True)
