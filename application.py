@@ -10,11 +10,6 @@ import time
 import DataBase
 
 
-# from tornado.options import define, options
-#
-# define("port", default=9999, help="run on the given port", type=int)
-
-
 class BaseHandler(tornado.web.RequestHandler):
 	def get_current_user(self):
 		return self.get_secure_cookie("username")
@@ -22,11 +17,6 @@ class BaseHandler(tornado.web.RequestHandler):
 
 class DashBoardHandler(BaseHandler):
 	def get(self):
-		"""
-
-        :type self: object
-        """
-
 		a = self.get_secure_cookie("username")
 		if a:
 			self.render("Dashboard.html")
