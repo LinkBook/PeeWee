@@ -7,7 +7,7 @@
 
     <title>ارتباط با ما</title>
 
-    <link rel="stylesheet" media="screen" type="text/css" href="../static/css/style.css"/>
+    <link rel="stylesheet" media="screen" type="text/css" href="../static/css/.stylecss"/>
 
     <style type="text/css">
         body, td, th {
@@ -23,7 +23,7 @@
         }
     </style>
 </head>
-
+{% extends Main.html %}
 
 <body>
 
@@ -86,30 +86,26 @@
     </div>
     <!-- End Header -->
 
-
+    {% block container %}
     <!-- Start Container -->
-    <div id="container">
+    <div id="container" class="row">
         <br>
 
-        <form id="contact-form" action="" method="post">
+        <form id="contact-form" action="" method="post" class="right center-align">
             <h2>
-                <legend>فرم ارتباط ما</legend>
+                <b>فرم ارتباط ما</b>
                 <br>
             </h2>
 
-
-            <label> نام : </label> <br>
-            <label>
+            <label> نام :
                 <input type="text" name="namec"/>
             </label> <br>
 
-            <label> ایمیل : </label> <br>
-            <label>
+            <label> ایمیل :
                 <input name="email" type="email" required/>
             </label> <br>
 
-            <label>متن پیام : </label> <br>
-            <label>
+            <label>متن پیام :
                 <textarea name="messege"> </textarea>
             </label> <br>
 
@@ -122,6 +118,7 @@
         <br style="clear: both;"/>
 
     </div>
+    {% end %}
     <!-- End Container -->
 
 

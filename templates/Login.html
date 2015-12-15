@@ -1,13 +1,13 @@
 <!doctype html>
 <html lang="fa">
 
-
+{% extends Main.html %}
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 
     <title>لینک بوک</title>
 
-    <link rel="stylesheet" media="screen" type="text/css" href="../static/css/style.css"/>
+    <link rel="stylesheet" media="screen" type="text/css" href="../static/css/.stylecss"/>
 
     <style type="text/css">
         body, td, th {
@@ -89,28 +89,49 @@
 
 
     <!-- Start Container -->
-    <div id="container">
+    {% block container %}
+    <br><br><br>
 
-        <br>
-        <br>
-
-        <form id="login-form" action="/Login" method="post">
-
-            <label>نام کاربری :</label> <br>
-            <input type="text" name="username" required>
-            </label> <br>
-            <label> پسورد :</label> <br>
-            <label>
-                <input type="password" name="password" required>
-            </label> <br><br>
-            <input type="submit" value="وارد شدن"> <br>
-
+    <div id="container" class="col">
+        <form class="col s12" id="login-form" action="/Login" method="post">
+            <div class="col">
+                <div class="input-field col s6">
+                    <i class="material-icons prefix">account_circle</i>
+                    <input name="username" type="text" required class="validate">
+                    <label for="username">username</label>
+                </div>
+                <div class="input-field col s6">
+                    <i class="material-icons prefix">lock</i>
+                    <input name="password" type="password" required class="validate">
+                    <label for="password">Password</label>
+                </div>
+            </div>
+            <div class="col s12 center ">
+                <i class="material-icons prefix">lock_open</i>
+                <input type="submit" value="Login""> <br>
+            </div>
         </form>
-
-
-        <br style="clear: both;"/>
-
     </div>
+    <br><br><br>
+    {% end %}
+    {##}
+    {#        <form class="col s12 center " id="login-form" action="/Login" method="post">#}
+    {#            <div class="input-field" ><label>نام کاربری :#}
+    {#            <input class="validate" type="text" name="username" required>#}
+    {#            </label></div> <br>#}
+    {#            <div class="input-field">#}
+    {#            <label> پسورد :#}
+    {#                <input class="validate" type="password" name="password" required>#}
+    {#            </label> </div><br>#}
+    {#            <input type="submit" value="وارد شدن"> <br>#}
+    {##}
+    {#        </form>#}
+    {##}
+    {##}
+    {#        <br style="clear: both;"/>#}
+    {##}
+    {#    </div>#}
+
     <!-- End Container -->
 
 

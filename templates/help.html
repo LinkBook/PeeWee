@@ -1,13 +1,13 @@
 <!doctype html>
 <html lang="fa">
 
-
+{% extends Main.html %}
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 
     <title>Help</title>
 
-    <link rel="stylesheet" media="screen" type="text/css" href="../static/css/style.css"/>
+    <link rel="stylesheet" media="screen" type="text/css" href="../static/css/.stylecss"/>
 </head>
 
 <body>
@@ -74,7 +74,8 @@
 
 
     <!-- Start Container -->
-    <div id="container">
+    {% block container %}
+    <div id="container" class="col center-align">
 
         <br>
 
@@ -98,7 +99,7 @@
         </div>
     </div>
 
-
+    {% end %}
     <!-- Start Footer -->
     <div id="footer">
 

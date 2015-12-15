@@ -1,13 +1,13 @@
 <!doctype html>
 <html lang="fa">
 
-
+{% extends Main.html %}
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 
     <title>Register</title>
 
-    <link rel="stylesheet" media="screen" type="text/css" href="../static/css/style.css"/>
+    <link rel="stylesheet" media="screen" type="text/css" href="../static/css/.stylecss"/>
 
     <style type="text/css">
         body, td, th {
@@ -89,63 +89,111 @@
 
 
     <!-- Start Container -->
-    <div id="container">
-
-        <br>
-        <br>
-
-        <form id="Register-form" action="/Register" method="post">
-
-            <label>نام : </label> <br>
-            <label>
-                <input type="text" name="name">
-            </label> <br/>
-            <label>نام خانوادگی : </label> <br>
-            <label>
-                <input type="text" name="family">
-            </label> <br/>
-            <label>نام کاربری : </label> <br>
-            <label>
-                <input type="text" name="username" required>
-            </label> <br/> <br>
-
-            <label>نوع کاربری :</label> <br>
-
-            <label>
-                <select name="user-type">
-
-                    <optgroup label="نقش"></optgroup>
-                    <option value="1"> مدیر سایت</option>
-                    <option value="2"> توسعه دهنده وب</option>
-                    <option value="3"> کاربر عادی</option>
-
-                </select>
-            </label> <br/> <br>
-
-            <label> تصویر : </label>
-            <input type="file" name="flpicture"> <br> <br>
-
-            <br> <br>
-            <label> ایمیل : </label> <br>
-            <label>
-                <input type="email" name="email" required>
-            </label> <br/>
-            <label> رمز عبور : </label> <br>
-            <label>
-                <input type="password" name="password" required>
-            </label> <br/>
-            <label>تکرار روز عبور : </label> <br>
-            <label>
-                <input type="password" name="password" required>
-            </label> <br/> <br>
-
-            <input type="submit" value=" ثبت نام ">
-        </form>
-
-
-        <br style="clear: both;"/>
-
+    {% block container %}
+    <div id="container" class="row">
+        <div class="row">
+            <form class="col s12">
+                <div class="row">
+                    <div class="input-field col s6">
+                        <input name="name" type="text" class="validate">
+                        <label for="first_name">First Name</label>
+                    </div>
+                    <div class="input-field col s6">
+                        <input name="family" type="text" class="validate">
+                        <label for="last_name">Last Name</label>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="input-field col s12">
+                        <select class="browser-default">
+                            <option value="" disabled selected>Choose your option</option>
+                            <option value="1">Option 1</option>
+                            <option value="2">Option 2</option>
+                            <option value="3">Option 3</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="input-field col s12">
+                        <input name="username" type="text" required class="validate">
+                        <label for="username">Username</label>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="input-field col s12">
+                        <input name="password" type="password" required class="validate">
+                        <label for="password">Password</label>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="input-field col s12">
+                        <input name="email" type="email" required class="validate">
+                        <label for="email">Email</label>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <div class="center"><input type="submit" value="Register"></div>
     </div>
+    {% end %}
+
+    <div id="container" class="row">
+        <div class="col s12 center">
+            <br>
+            <br>
+
+            <form class="col s6" id="Register-form" action="/Register" method="post">
+
+                <label>نام :
+                    <input type="text" name="name">
+                </label> <br/>
+                <label>نام خانوادگی : </label> <br>
+                <label>
+                    <input type="text" name="family">
+                </label> <br/>
+                <label>نام کاربری : </label> <br>
+                <label>
+                    <input type="text" name="username" required>
+                </label> <br/> <br>
+
+                <label>نوع کاربری :</label> <br>
+
+                <label>
+                    <select name="user-type">
+
+                        <optgroup label="نقش"></optgroup>
+                        <option value="1"> مدیر سایت</option>
+                        <option value="2"> توسعه دهنده وب</option>
+                        <option value="3"> کاربر عادی</option>
+
+                    </select>
+                </label> <br/> <br>
+
+                <label> تصویر : </label>
+                <input type="file" name="flpicture"> <br> <br>
+
+                <br> <br>
+                <label> ایمیل : </label> <br>
+                <label>
+                    <input type="email" name="email" required>
+                </label> <br/>
+                <label> رمز عبور : </label> <br>
+                <label>
+                    <input type="password" name="password" required>
+                </label> <br/>
+                <label>تکرار روز عبور : </label> <br>
+                <label>
+                    <input type="password" name="password" required>
+                </label> <br/> <br>
+
+                <input type="submit" value=" ثبت نام ">
+            </form>
+
+
+            <br style="clear: both;"/>
+        </div>
+    </div>
+
     <!-- End Container -->
 
 

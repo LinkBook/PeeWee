@@ -7,14 +7,14 @@
 
     <title>Help</title>
 
-    <link rel="stylesheet" media="screen" type="text/css" href="../static/css/style.css"/>
+    <link rel="stylesheet" media="screen" type="text/css" href="../static/css/.stylecss"/>
 </head>
 
 <body>
+{% extends Main.html %}
 
 <!-- Start Wrapper -->
 <div id="wrapper">
-
 
     <!-- Start Header -->
     <div id="header">
@@ -70,14 +70,13 @@
         <br style="clear: both;"/>
     </div>
     <!-- End Header -->
-
-
+    {% block container %}
     <!-- Start Container -->
-    <div id="container">
+    <div id="container" class="container center-align">
 
         <br>
 
-        <h2 style="color: #E91317;"><strong> درباره ی ما </strong></h2>
+        <h2 style="color: #E91317;"><b> درباره ی ما </b></h2>
 
         <br>
         <br>
@@ -96,6 +95,8 @@
 
         </div>
     </div>
+    <!-- end Container -->
+    {% end %}
     <!-- Start Footer -->
     <div id="footer">
         <div class="left">

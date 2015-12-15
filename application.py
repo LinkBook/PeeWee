@@ -73,10 +73,10 @@ class LoginHandler(BaseHandler):
 		self.render('Login.html')
 
 	def post(self):
-		username = self.get_argument("username")
-		password = self.get_argument("password")
+		Username = self.get_argument("username")
+		Password = self.get_argument("password")
 		try:
-			user = DataBase.User.get(DataBase.User.username == username, DataBase.User.password == password)
+			user = DataBase.User.get(DataBase.User.username == Username, DataBase.User.password == Password)
 		except DataBase.User.DoesNotExist:
 			user = None
 		if user:
