@@ -48,24 +48,24 @@ class RegisterHandler(tornado.web.RequestHandler):
 		name = self.get_argument("name")
 		family = self.get_argument("family")
 		username = self.get_argument("username")
-		user_type = self.get_argument("user-type")
-		picture = self.get_argument("flpicture")
+		# user_type = self.get_argument("user-type")
+		# picture = self.get_argument("flpicture")
 		email = self.get_argument("email")
 		password = self.get_argument("password")
-		user = DataBase.User()
-		user.name = name
-		user.username = username
-		user.family = family
-		user.usertype = user_type
-		user.picture = picture
-		user.email = email
-		user.password = password
-		user.save()
-		self.render("Login.html")
-
-	# cur.close()
-	# conn.commit()
-	# conn.close()
+		try:
+			user = DataBase.User()
+			user.name = name
+			user.username = username
+			user.family = family
+			# user.usertype = user_type
+			user.email = email
+			user.password = password
+			user.save()
+			self.write("<script>alert('اطلاعات ثبت شد')</script>")
+			self.render("Login.html")
+		except:
+			self.write("<script>alert('اطلاعات ثبت نشد')</script>")
+			self.redirect("/")
 
 
 class LoginHandler(BaseHandler):
@@ -175,18 +175,22 @@ class ContactHandler(tornado.web.RequestHandler):
 		self.render('Contact.html')
 
 	def post(self):
-		sql = "INSERT INTO contact(cname, cemail, cmessage)VALUES(%s, %s,%s)"
-
 		cname = self.get_argument("namec")
 		cemail = self.get_argument("email")
 		cmessage = self.get_argument("messege")
-		conn = pymysql.connect(host="localhost", port=3306, user="root", passwd="", db="linkbook")
-		cur = conn.cursor()
-		cur.execute(sql, (cname, cemail, cmessage))
+		try:
+			contact = DataBase.Contacts()
+			contact.Name = cname
+			contact.Email = cemail
+			contact.Message = cmessage
+			contact.save()
+			self.write("<script>alert('اطلاعات ثبت شد')</script>")
+			self.redirect("/")
+		except:
+			self.write("<script>alert('اطلاعات ثبت نشد')</script>")
+			self.redirect("/")
+
 		self.redirect("/")
-		cur.close()
-		conn.commit()
-		conn.close()
 
 
 class MainsHandler(tornado.web.RequestHandler):

@@ -92,7 +92,7 @@
     {% block container %}
     <div id="container" class="row">
         <div class="row">
-            <form class="col s12">
+            <form class="col s12" id="Register-form" action="/Register" method="post">
                 <div class="row">
                     <div class="input-field col s6">
                         <input name="name" type="text" class="validate">
@@ -105,8 +105,8 @@
                 </div>
                 <div class="row">
                     <div class="input-field col s12">
-                        <select class="browser-default">
-                            <option value="" disabled selected>Choose your option</option>
+                        <select name="user-type" class="browser-default">
+                            <option value="1" disabled selected>Choose your option</option>
                             <option value="1">Option 1</option>
                             <option value="2">Option 2</option>
                             <option value="3">Option 3</option>
@@ -131,9 +131,10 @@
                         <label for="email">Email</label>
                     </div>
                 </div>
+                <div class="center"><input type="submit" value="Register"></div>
             </form>
         </div>
-        <div class="center"><input type="submit" value="Register"></div>
+
     </div>
     {% end %}
 

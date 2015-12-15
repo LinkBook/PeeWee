@@ -35,6 +35,12 @@ class Web(MySQLModel):
 	WebSub = CharField()
 
 
+class Contacts(MySQLModel):
+	Name = CharField()
+	Email = CharField(null=False)
+	Message = TextField(null=False)
+
+
 db.connect()
 if __name__ == '__main__':
-	db.create_tables([User, Web], safe=True)
+	db.create_tables([User, Web, Contacts], safe=True)
