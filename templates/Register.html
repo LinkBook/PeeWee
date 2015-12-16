@@ -1,223 +1,109 @@
-<!doctype html>
-<html lang="fa">
-
 {% extends Main.html %}
-<head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+{% block container %}
+<!-- Start Container -->
 
-    <title>Register</title>
-
-    <link rel="stylesheet" media="screen" type="text/css" href="../static/css/.stylecss"/>
-
-    <style type="text/css">
-        body, td, th {
-            font-family: "b nazanin", serif;
-            font-size: 22px;
-        }
-
-        a {
-            font-family: "b nazanin", serif;
-        }
-
-        h1, h2, h3, h4, h5, h6 {
-            font-family: "b nazanin", serif;
-        }
-    </style>
-</head>
-
-
-<body>
-
-<!-- Start Wrapper -->
-<div id="wrapper">
-
-
-    <!-- Start Header -->
-    <div id="header">
-
-        <div class="right">
-            <div id="logo">
-
+<div id="container" class="row">
+    <div class="row">
+        <form class="col s12" id="Register-form" action="/Register" method="post">
+            <div class="row">
+                <div class="input-field col s6">
+                    <input name="name" type="text" class="validate">
+                    <label for="first_name">First Name</label>
+                </div>
+                <div class="input-field col s6">
+                    <input name="family" type="text" class="validate">
+                    <label for="last_name">Last Name</label>
+                </div>
             </div>
-
-            <div id="tagline">
-
-            </div>
-        </div>
-
-        <div class="left">
-
-            <div id="sn-icons">
-
-                <a href="Register"><img src="../static/images/linkbook-img/Registericon.png" width="52" height="52"
-                                        alt="Register" title="ثبت نام"/></a>
-                <a href="Login"><img src="../static/images/linkbook-img/Loginicon.png" width="52" height="52"
-                                     alt="Login" title="وارد شدن"/></a>
-
-            </div>
-
-
-            <div id="searchfrm">
-                <form action="#">
-                    <input type="submit" value=""/>
-                    <label>
-                        <input type="text" name="search" value="جستجو..."
-                               onfocus="if(this.value == 'جستجو...') {this.value = '';}"
-                               onblur="if(this.value == '') {this.value = 'جستجو...';}"/>
-                    </label>
-                </form>
-
-            </div>
-        </div>
-
-        <br style="clear: both;"/>
-
-        <ul id="menu">
-
-            <li><a href="index"><strong>خانه</strong></a></li>
-            <li><a href="webshow"><strong>نمایش وب سایت </strong></a></li>
-            <li><a href="about">درباره</a></li>
-            <li><a href="Contact">ارتباط با ما</a></li>
-            <li><a href="help"><strong>راهنما</strong></a></li>
-            <li><a href="Webpages">صفحه ی وب سایت</a></li>
-            <li><a href="Dashboard">داشبورد</a></li>
-        </ul>
-
-        <br style="clear: both;"/>
-    </div>
-    <!-- End Header -->
-
-
-    <!-- Start Container -->
-    {% block container %}
-    <div id="container" class="row">
-        <div class="row">
-            <form class="col s12" id="Register-form" action="/Register" method="post">
-                <div class="row">
-                    <div class="input-field col s6">
-                        <input name="name" type="text" class="validate">
-                        <label for="first_name">First Name</label>
-                    </div>
-                    <div class="input-field col s6">
-                        <input name="family" type="text" class="validate">
-                        <label for="last_name">Last Name</label>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="input-field col s12">
-                        <select name="user-type" class="browser-default">
-                            <option value="1" disabled selected>Choose your option</option>
-                            <option value="1">Option 1</option>
-                            <option value="2">Option 2</option>
-                            <option value="3">Option 3</option>
-                        </select>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="input-field col s12">
-                        <input name="username" type="text" required class="validate">
-                        <label for="username">Username</label>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="input-field col s12">
-                        <input name="password" type="password" required class="validate">
-                        <label for="password">Password</label>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="input-field col s12">
-                        <input name="email" type="email" required class="validate">
-                        <label for="email">Email</label>
-                    </div>
-                </div>
-                <div class="center"><input type="submit" value="Register"></div>
-            </form>
-        </div>
-
-    </div>
-    {% end %}
-
-    <div id="container" class="row">
-        <div class="col s12 center">
-            <br>
-            <br>
-
-            <form class="col s6" id="Register-form" action="/Register" method="post">
-
-                <label>نام :
-                    <input type="text" name="name">
-                </label> <br/>
-                <label>نام خانوادگی : </label> <br>
-                <label>
-                    <input type="text" name="family">
-                </label> <br/>
-                <label>نام کاربری : </label> <br>
-                <label>
-                    <input type="text" name="username" required>
-                </label> <br/> <br>
-
-                <label>نوع کاربری :</label> <br>
-
-                <label>
-                    <select name="user-type">
-
-                        <optgroup label="نقش"></optgroup>
-                        <option value="1"> مدیر سایت</option>
-                        <option value="2"> توسعه دهنده وب</option>
-                        <option value="3"> کاربر عادی</option>
-
+            <div class="row">
+                <div class="input-field col s12">
+                    <select name="user-type" class="browser-default">
+                        <option value="1" disabled selected>Choose your option</option>
+                        <option value="1">Option 1</option>
+                        <option value="2">Option 2</option>
+                        <option value="3">Option 3</option>
                     </select>
-                </label> <br/> <br>
-
-                <label> تصویر : </label>
-                <input type="file" name="flpicture"> <br> <br>
-
-                <br> <br>
-                <label> ایمیل : </label> <br>
-                <label>
-                    <input type="email" name="email" required>
-                </label> <br/>
-                <label> رمز عبور : </label> <br>
-                <label>
-                    <input type="password" name="password" required>
-                </label> <br/>
-                <label>تکرار روز عبور : </label> <br>
-                <label>
-                    <input type="password" name="password" required>
-                </label> <br/> <br>
-
-                <input type="submit" value=" ثبت نام ">
-            </form>
-
-
-            <br style="clear: both;"/>
-        </div>
-    </div>
-
-    <!-- End Container -->
-
-
-    <!-- Start Footer -->
-    <div id="footer">
-
-        <div class="left">
-            <div id="logof">
-                <a href="#"><img src="../static/images/linkbook-img/logof.png" width="80" height="110"/>
-                </a>
+                </div>
             </div>
-            <br style="clear: both;"/>
-
-            <p class="copyright"> تمام حقوق این وب سایت متعلق است به
-                دانشجویان گروه کامپیوتر دانشگاه لرستان<br> پاییز 94
-            </p>
-        </div>
-        <!-- End Footer -->
-        <br style="clear: both;"/>
-
+            <div class="row">
+                <div class="input-field col s12">
+                    <input name="username" type="text" required class="validate">
+                    <label for="username">Username</label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="input-field col s12">
+                    <input name="password" type="password" required class="validate">
+                    <label for="password">Password</label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="input-field col s12">
+                    <input name="email" type="email" required class="validate">
+                    <label for="email">Email</label>
+                </div>
+            </div>
+            <div class="center"><input type="submit" value="Register"></div>
+        </form>
     </div>
-    <!-- End Wrapper -->
-</div>
-</body>
 
-</html>
+</div>
+<!-- End Container -->
+{% end %}
+{##}
+{#    <div id="container" class="row">#}
+{#        <div class="col s12 center">#}
+{#            <br>#}
+{#            <br>#}
+{##}
+{#            <form class="col s6" id="Register-form" action="/Register" method="post">#}
+{##}
+{#                <label>نام :#}
+{#                    <input type="text" name="name">#}
+{#                </label> <br/>#}
+{#                <label>نام خانوادگی : </label> <br>#}
+{#                <label>#}
+{#                    <input type="text" name="family">#}
+{#                </label> <br/>#}
+{#                <label>نام کاربری : </label> <br>#}
+{#                <label>#}
+{#                    <input type="text" name="username" required>#}
+{#                </label> <br/> <br>#}
+{##}
+{#                <label>نوع کاربری :</label> <br>#}
+{##}
+{#                <label>#}
+{#                    <select name="user-type">#}
+{##}
+{#                        <optgroup label="نقش"></optgroup>#}
+{#                        <option value="1"> مدیر سایت</option>#}
+{#                        <option value="2"> توسعه دهنده وب</option>#}
+{#                        <option value="3"> کاربر عادی</option>#}
+{##}
+{#                    </select>#}
+{#                </label> <br/> <br>#}
+{##}
+{#                <label> تصویر : </label>#}
+{#                <input type="file" name="flpicture"> <br> <br>#}
+{##}
+{#                <br> <br>#}
+{#                <label> ایمیل : </label> <br>#}
+{#                <label>#}
+{#                    <input type="email" name="email" required>#}
+{#                </label> <br/>#}
+{#                <label> رمز عبور : </label> <br>#}
+{#                <label>#}
+{#                    <input type="password" name="password" required>#}
+{#                </label> <br/>#}
+{#                <label>تکرار روز عبور : </label> <br>#}
+{#                <label>#}
+{#                    <input type="password" name="password" required>#}
+{#                </label> <br/> <br>#}
+{##}
+{#                <input type="submit" value=" ثبت نام ">#}
+{#            </form>#}
+{##}
+{##}
+{#            <br style="clear: both;"/>#}
+{#        </div>#}
+{#    </div>#}
