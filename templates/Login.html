@@ -1,19 +1,19 @@
 {% extends Main.html %}
 {% block container %}
 <br><br><br>
-<div id="container" class="col s12 s6">
-    <div class="col s6 l6">
+<div id="container" class="col s11 m6 ">
+    <div class="row center">
         <form id="login-form" action="/Login" method="post">
             <div class="col s12 push-l4">
                 <div class="input-field row s6 l6">
                     <i class="material-icons prefix">account_circle</i>
-                    <input name="username" type="text" required class="validate">
-                    <label for="username">username</label>
+                    <input name="نام کاربری" type="text" required class="validate">
+                    <label for="نام کاربری">نام کاربری</label>
                 </div>
                 <div class="input-field row s6 l6">
                     <i class="material-icons prefix">lock</i>
-                    <input name="password" type="password" required class="validate">
-                    <label for="password">Password</label>
+                    <input name="پسورد" type="password" required class="validate">
+                    <label for="پسورد">پسورد</label>
                 </div>
             </div>
             <div class="col s12 center">
@@ -26,8 +26,8 @@
             <br><br>
         </form>
     </div>
-    <div id="add Button" class="col s6 l6 center">
-        <a href="Register"" class="waves-effect waves-light btn"><i class="material-icons left">add</i>Register</a>
+    <div id="add Button" class="row center">
+        <a href="Register" class="waves-effect waves-light btn"><i class="material-icons left">add</i>عضویت</a>
         {#        <button class="btn waves-effect waves-light" type="button" name="action">#}
         {#            <i class="material-icons right">add</i><a href="Register"></a>#}
         {#        </button>#}
