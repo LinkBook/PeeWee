@@ -16,221 +16,254 @@
 <!--Import jQuery before materialize.js-->
 <script type="text/javascript" src="../static/js/jquery-2.1.1.min.js"></script>
 <script type="text/javascript" src="../static/js/materialize.min.js"></script>
-<!--Start Header-->
 {% block header %}
+<!--Start Header-->
 <header>
 
     <!--Start Navigation-->
     {% block Nav %}
-    <nav class="z-depth-1 light-blue navbar-fixed">
-        <!--Start Top Navigation-->
-        <div class="nav-wrapper">
-            <a href="#" data-activates="mobile-demo" class="button-collapse">
-                <ul class="right hide-on-med-and-down">
-                    <li><a href="Dashboard">داشبورد</a></li>
-                    <li><a href="Webpages">صفحه ی وب سایت</a></li>
-                    <li><a href="help">راهنما</a></li>
-                    <li><a href="Contact">ارتباط با ما</a></li>
-                    <li><a href="about">درباره</a></li>
-                    <li><a href="webshow">نمایش وب سایت </a></li>
-                    <li><a href="index"><strong>خانه</strong></a></li>
-                </ul>
-                <ul class="side-nav" id="mobile-demo">
-                    <li><a href="Dashboard">داشبورد</a></li>
-                    <li><a href="Webpages">صفحه ی وب سایت</a></li>
-                    <li><a href="help">راهنما</a></li>
-                    <li><a href="Contact">ارتباط با ما</a></li>
-                    <li><a href="about">درباره</a></li>
-                    <li><a href="webshow">نمایش وب سایت </a></li>
-                    <li><a href="index"><strong>خانه</strong></a></li>
-                </ul>
-        </div>
-    </nav>
-        <!--End Top Navigation-->
-
-        <!--Start Click-only FAB-->
-        <div class="fixed-action-btn vertical-align-top click-to-toggle" style="bottom: 45px; right: 24px;">
-            <a class="btn-floating btn-large red">
-                <i class="material-icons">menu</i>
-            </a>
-            <ul>
-                <li><a class="btn-floating red"><i class="material-icons">insert_chart</i></a></li>
-                <li><a class="btn-floating yellow darken-1"><i class="material-icons">format_quote</i></a></li>
-                <li><a class="btn-floating green"><i class="material-icons">publish</i></a></li>
-                <li><a class="btn-floating blue"><i class="material-icons">attach_file</i></a></li>
+    <nav>
+        <div class="nav-wrapper light-blue">
+            {#            <a href="#!" class="brand-logo">Logo</a>#}
+            <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
+            <ul class="right hide-on-med-and-down">
+                <li><a href="Dashboard">داشبورد</a></li>
+                <li><a href="Webpages">صفحه ی وب سایت</a></li>
+                <li><a href="help">راهنما</a></li>
+                <li><a href="Contact">ارتباط با ما</a></li>
+                <li><a href="about">درباره</a></li>
+                <li><a href="webshow">نمایش وب سایت </a></li>
+                <li><a href="index"><strong>خانه</strong></a></li>
+            </ul>
+            <ul class="side-nav" id="mobile-demo">
+                <li><a href="Dashboard">داشبورد</a></li>
+                <li><a href="Webpages">صفحه ی وب سایت</a></li>
+                <li><a href="help">راهنما</a></li>
+                <li><a href="Contact">ارتباط با ما</a></li>
+                <li><a href="about">درباره</a></li>
+                <li><a href="webshow">نمایش وب سایت </a></li>
+                <li><a href="index"><strong>خانه</strong></a></li>
             </ul>
         </div>
-        <!--End Click-only FAB-->
+    </nav>
+    {#    <nav class="z-depth-1 light-blue navbar-fixed z-depth-1-half">#}
+    {#        <!--Start Top Navigation-->#}
+    {#        <div class="nav-wrapper">#}
+    {#            <a href="#" data-activates="mobile-demo" class="button-collapse">#}
+    {#                <ul class="right hide-on-med-and-down">#}
+    {#                    <li><a href="Dashboard">داشبورد</a></li>#}
+    {#                    <li><a href="Webpages">صفحه ی وب سایت</a></li>#}
+    {#                    <li><a href="help">راهنما</a></li>#}
+    {#                    <li><a href="Contact">ارتباط با ما</a></li>#}
+    {#                    <li><a href="about">درباره</a></li>#}
+    {#                    <li><a href="webshow">نمایش وب سایت </a></li>#}
+    {#                    <li><a href="index"><strong>خانه</strong></a></li>#}
+    {#                </ul>#}
+    {#                <ul class="side-nav" id="mobile-demo" >#}
+    {#                    <li><a href="Dashboard">داشبورد</a></li>#}
+    {#                    <li><a href="Webpages">صفحه ی وب سایت</a></li>#}
+    {#                    <li><a href="help">راهنما</a></li>#}
+    {#                    <li><a href="Contact">ارتباط با ما</a></li>#}
+    {#                    <li><a href="about">درباره</a></li>#}
+    {#                    <li><a href="webshow">نمایش وب سایت </a></li>#}
+    {#                    <li><a href="index"><strong>خانه</strong></a></li>#}
+    {#                </ul>#}
+    {#        </div>#}
+    {#    </nav>#}
+    <!--End Top Navigation-->
+
+    <!--Start Click-only FAB-->
+    <div class="fixed-action-btn vertical-align-top click-to-toggle" style="bottom: 45px; right: 24px;">
+        <a class="btn-floating btn-large red">
+            <i class="material-icons">menu</i>
+        </a>
+        <ul>
+            <li><a class="btn-floating red"><i class="material-icons">insert_chart</i></a></li>
+            <li><a class="btn-floating yellow darken-1"><i class="material-icons">format_quote</i></a></li>
+            <li><a class="btn-floating green"><i class="material-icons">publish</i></a></li>
+            <li><a class="btn-floating blue"><i class="material-icons">attach_file</i></a></li>
+        </ul>
+    </div>
+    <!--End Click-only FAB-->
     {% end %}
     <!--End Navigation-->
 
 </header>
-{% end %}
 <!--End Header-->
+{% end %}
+
 
 <!-- Page Layout here -->
 <div class="row">
 
-    <div class="col s12 m3 l3"> <!-- Note that "m3 l3" was added -->
+    <div class="col s1 m2 l1 green-text z-depth-1-half"><p>Just <b>Link Book</b></p><!-- Note that "m3 l3" was added -->
         <!-- Grey navigation panel
               This content will be:
           3-columns-wide on large screens,
           4-columns-wide on medium screens,
           12-columns-wide on small screens  -->
-
     </div>
-
-    <div class="col s12 m8 l9"> <!-- Note that "m8 l9" was added -->
+    <div class="col s9 m8 l9 blue-grey lighten-5 z-depth-1-half"> <!-- Note that "m8 l9" was added -->
         <!-- Teal page content
 
               This content will be:
           9-columns-wide on large screens,
           8-columns-wide on medium screens,
           12-columns-wide on small screens  -->
+        <!-- Start Container -->
+        {% block container %}
+        <div class="container">
+            <div class="section">
 
-    </div>
+                <!--   Icon Section   -->
+                <div class="row">
+                    <div class="col s12 m3 card">
+                        <div class="card-image waves-effect waves-block waves-light">
+                            <img class="activator" src="../static/images/linkbook-img/logof.png">
+                        </div>
+                        <div class="card-content">
+                            <span class="card-title activator grey-text text-darken-4">Card Title<i
+                                    class="material-icons right">more_vert</i></span>
 
-</div>
+                            <p><a href="#">This is a link</a></p>
+                        </div>
+                        <div class="card-reveal">
+                            <span class="card-title grey-text text-darken-4">Card Title<i class="material-icons right">close</i></span>
 
-<!-- Start Container -->
-{% block container %}
-<div class="container">
-    <div class="section">
+                            <p>Here is some more information about this product that is only revealed once clicked
+                                on.</p>
+                        </div>
+                    </div>
+                    <div class="col s12 m3 card">
+                        <div class="card-image waves-effect waves-block waves-light">
+                            <img class="activator" src="../static/images/linkbook-img/logof.png">
+                        </div>
+                        <div class="card-content">
+                            <span class="card-title activator grey-text text-darken-4">Card Title<i
+                                    class="material-icons right">more_vert</i></span>
 
-        <!--   Icon Section   -->
-        <div class="row">
-            <div class="col s12 m3 card">
-                <div class="card-image waves-effect waves-block waves-light">
-                    <img class="activator" src="../static/images/linkbook-img/logof.png">
+                            <p><a href="#">This is a link</a></p>
+                        </div>
+                        <div class="card-reveal">
+                            <span class="card-title grey-text text-darken-4">Card Title<i class="material-icons right">close</i></span>
+
+                            <p>Here is some more information about this product that is only revealed once clicked
+                                on.</p>
+                        </div>
+                    </div>
+                    <div class="col s12 m3 card">
+                        <div class="card-image waves-effect waves-block waves-light">
+                            <img class="activator" src="../static/images/linkbook-img/logof.png">
+                        </div>
+                        <div class="card-content">
+                            <span class="card-title activator grey-text text-darken-4">Card Title<i
+                                    class="material-icons right">more_vert</i></span>
+
+                            <p><a href="#">This is a link</a></p>
+                        </div>
+                        <div class="card-reveal">
+                            <span class="card-title grey-text text-darken-4">Card Title<i class="material-icons right">close</i></span>
+
+                            <p>Here is some more information about this product that is only revealed once clicked
+                                on.</p>
+                        </div>
+                    </div>
+                    <div class="col s12 m3 card">
+                        <div class="card-image waves-effect waves-block waves-light">
+                            <img class="activator" src="../static/images/linkbook-img/logof.png">
+                        </div>
+                        <div class="card-content">
+                            <span class="card-title activator grey-text text-darken-4">Card Title<i
+                                    class="material-icons right">more_vert</i></span>
+
+                            <p><a href="#">This is a link</a></p>
+                        </div>
+                        <div class="card-reveal">
+                            <span class="card-title grey-text text-darken-4">Card Title<i class="material-icons right">close</i></span>
+
+                            <p>Here is some more information about this product that is only revealed once clicked
+                                on.</p>
+                        </div>
+                    </div>
+                    <div class="col s12 m3 card">
+                        <div class="card-image waves-effect waves-block waves-light">
+                            <img class="activator" src="../static/images/linkbook-img/logof.png">
+                        </div>
+                        <div class="card-content">
+                            <span class="card-title activator grey-text text-darken-4">Card Title<i
+                                    class="material-icons right">more_vert</i></span>
+
+                            <p><a href="#">This is a link</a></p>
+                        </div>
+                        <div class="card-reveal">
+                            <span class="card-title grey-text text-darken-4">Card Title<i class="material-icons right">close</i></span>
+
+                            <p>Here is some more information about this product that is only revealed once clicked
+                                on.</p>
+                        </div>
+                    </div>
+                    <div class="col s12 m3">
+                        <div class="icon-block">
+                            <h2 class="center light-blue-text"><i class="material-icons">settings</i></h2>
+                            <h5 class="center">Easy to work with</h5>
+
+                            <p class="light">We have provided detailed documentation as well as specific code examples
+                                to help
+                                new users get started. We are also always open to feedback and can answer any questions
+                                a user
+                                may have about Materialize.</p>
+                        </div>
+                    </div>
+                    <div class="col s12 m3">
+
+                        <div class="icon-block">
+                            <h2 class="center light-blue-text"><i class="material-icons">flash_on</i></h2>
+                            <h5 class="center">Speeds up development</h5>
+
+                            <p class="light">We did most of the heavy lifting for you to provide a default stylings that
+                                incorporate our custom components. Additionally, we refined animations and transitions
+                                to
+                                provide a smoother experience for developers.</p>
+                        </div>
+                    </div>
                 </div>
-                <div class="card-content">
-                    <span class="card-title activator grey-text text-darken-4">Card Title<i
-                            class="material-icons right">more_vert</i></span>
 
-                    <p><a href="#">This is a link</a></p>
-                </div>
-                <div class="card-reveal">
-                    <span class="card-title grey-text text-darken-4">Card Title<i class="material-icons right">close</i></span>
-
-                    <p>Here is some more information about this product that is only revealed once clicked on.</p>
-                </div>
             </div>
+            <br><br>
 
-            <div class="col s12 m3 card">
-                <div class="card-image waves-effect waves-block waves-light">
-                    <img class="activator" src="../static/images/linkbook-img/logof.png">
-                </div>
-                <div class="card-content">
-                    <span class="card-title activator grey-text text-darken-4">Card Title<i
-                            class="material-icons right">more_vert</i></span>
+            <div class="section">
 
-                    <p><a href="#">This is a link</a></p>
-                </div>
-                <div class="card-reveal">
-                    <span class="card-title grey-text text-darken-4">Card Title<i class="material-icons right">close</i></span>
-
-                    <p>Here is some more information about this product that is only revealed once clicked on.</p>
-                </div>
-            </div>
-
-            <div class="col s12 m3 card">
-                <div class="card-image waves-effect waves-block waves-light">
-                    <img class="activator" src="../static/images/linkbook-img/logof.png">
-                </div>
-                <div class="card-content">
-                    <span class="card-title activator grey-text text-darken-4">Card Title<i
-                            class="material-icons right">more_vert</i></span>
-
-                    <p><a href="#">This is a link</a></p>
-                </div>
-                <div class="card-reveal">
-                    <span class="card-title grey-text text-darken-4">Card Title<i class="material-icons right">close</i></span>
-
-                    <p>Here is some more information about this product that is only revealed once clicked on.</p>
-                </div>
-            </div>
-
-            <div class="col s12 m3 card">
-                <div class="card-image waves-effect waves-block waves-light">
-                    <img class="activator" src="../static/images/linkbook-img/logof.png">
-                </div>
-                <div class="card-content">
-                    <span class="card-title activator grey-text text-darken-4">Card Title<i
-                            class="material-icons right">more_vert</i></span>
-
-                    <p><a href="#">This is a link</a></p>
-                </div>
-                <div class="card-reveal">
-                    <span class="card-title grey-text text-darken-4">Card Title<i class="material-icons right">close</i></span>
-
-                    <p>Here is some more information about this product that is only revealed once clicked on.</p>
-                </div>
-            </div>
-            <div class="col s12 m3 card">
-                <div class="card-image waves-effect waves-block waves-light">
-                    <img class="activator" src="../static/images/linkbook-img/logof.png">
-                </div>
-                <div class="card-content">
-                    <span class="card-title activator grey-text text-darken-4">Card Title<i
-                            class="material-icons right">more_vert</i></span>
-
-                    <p><a href="#">This is a link</a></p>
-                </div>
-                <div class="card-reveal">
-                    <span class="card-title grey-text text-darken-4">Card Title<i class="material-icons right">close</i></span>
-
-                    <p>Here is some more information about this product that is only revealed once clicked on.</p>
-                </div>
-            </div>
-            <div class="col s12 m3">
-                <div class="icon-block">
-                    <h2 class="center light-blue-text"><i class="material-icons">settings</i></h2>
-                    <h5 class="center">Easy to work with</h5>
-
-                    <p class="light">We have provided detailed documentation as well as specific code examples to help
-                        new users get started. We are also always open to feedback and can answer any questions a user
-                        may have about Materialize.</p>
-                </div>
-            </div>
-
-            <div class="col s12 m3">
-
-                <div class="icon-block">
-                    <h2 class="center light-blue-text"><i class="material-icons">flash_on</i></h2>
-                    <h5 class="center">Speeds up development</h5>
-
-                    <p class="light">We did most of the heavy lifting for you to provide a default stylings that
-                        incorporate our custom components. Additionally, we refined animations and transitions to
-                        provide a smoother experience for developers.</p>
-                </div>
             </div>
         </div>
+        {% end %}
+        <!-- End Container -->
 
     </div>
-    <br><br>
-
-    <div class="section">
-
+    <div class="col s2 m2 l2 blue z-depth-1-half"><!-- Note that "m3 l3" was added -->
+        <!-- Grey navigation panel
+              This content will be:
+          3-columns-wide on large screens,
+          4-columns-wide on medium screens,
+          12-columns-wide on small screens  -->
+        <p><br></p>
     </div>
 </div>
-{% end %}
-<!-- End Container -->
 
 <!--Start Footer-->
 <footer class="page-footer orange">
     <div class="container">
         <div class="row">
             <div class="col l6 s12">
-                <h5 class="white-text">Company Bio</h5>
+                <h5 class="white-text right-align">لینک بوک</h5>
 
-                <p class="grey-text text-lighten-4">We are a team of college students working on this project like it's
-                    our full time job. Any amount would help support and continue development on this project and is
-                    greatly appreciated.</p>
+                <p class="grey-text text-lighten-4 right-align j">ما یک تیم دانشگاهی هستیم که روی این پروژه کار میکنیم ؛
+                    و تازه در ابتدای راهیم ؛ به امید همکاری های متداومتر ...</p>
 
 
             </div>
             <div class="col l3 s12">
-                <h5 class="white-text">Settings</h5>
+                <h5 class="white-text right-align"> پیشنهادی
+                    <h5>
                 <ul>
                     <li><a class="white-text" href="#!">Link 1</a></li>
                     <li><a class="white-text" href="#!">Link 2</a></li>
@@ -239,7 +272,7 @@
                 </ul>
             </div>
             <div class="col l3 s12">
-                <h5 class="white-text">Connect</h5>
+                <h5 class="white-text right-align">لینک ها</h5>
                 <ul>
                     <li><a class="white-text" href="#!">Link 1</a></li>
                     <li><a class="white-text" href="#!">Link 2</a></li>
@@ -251,7 +284,7 @@
     </div>
     <div class="footer-copyright">
         <div class="container">
-            Made by <a class="orange-text text-lighten-3" href="http://materializecss.com">Materialize</a>
+            Made by <a class="orange-text text-lighten-3">LinkBook Team</a>
         </div>
     </div>
 </footer><!--End Footer-->

@@ -1,12 +1,14 @@
 # coding=utf-8
 
+import time
+
+import pymysql
 import tornado.escape
 import tornado.httpserver
 import tornado.ioloop
 import tornado.options
 import tornado.web
-import pymysql
-import time
+
 import DataBase
 
 
@@ -172,10 +174,8 @@ class ContactHandler(tornado.web.RequestHandler):
             contact.Message = cmessage
             contact.save()
             self.write("<script>alert('اطلاعات ثبت شد')</script>")
-            self.redirect("/")
         except:
             self.write("<script>alert('اطلاعات ثبت نشد')</script>")
-            self.redirect("/")
 
         self.redirect("/")
 
